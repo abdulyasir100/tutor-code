@@ -1,28 +1,4 @@
-// Placeholder until Phase 3 creates state/types.ts
-export type Step = {
-  id: string
-  number: number
-  title: string
-  description: string
-  guidance: string
-  expectedFiles: string[]
-  expectedCommands: string[]
-  completionCriteria: string
-  status: string
-  startedAt?: string
-  completedAt?: string
-}
-
-export type Plan = {
-  title: string
-  description: string
-  recommendedStructure: Array<{ path: string; purpose: string }>
-  steps: Step[]
-  milestones: unknown[]
-  mermaidDiagram: string
-  committedAt?: string
-  revisionCount: number
-}
+import { Step, Plan } from '../state/types'
 
 export type CharacterMood = 'neutral' | 'warn' | 'praise'
 
