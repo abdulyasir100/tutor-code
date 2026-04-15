@@ -2,7 +2,21 @@
 
 All notable changes to TutorCode are documented here.
 
-## [1.0.0] — Sprint 3: Sensors
+## [0.0.1] — Sprint 4: Interface
+
+### Added — Phase 6: UI
+- `src/ui/guidePanel.ts` — Guide Mode webview at ViewColumn.Three, CSP nonce, retainContextWhenHidden, typed event emitters (onGotIt, onNeedHint, onPause, onToggle, onReady)
+- `src/ui/chatPanel.ts` — Chat Mode webview at ViewColumn.Two, streaming chat_chunk support, plan display
+- `src/ui/statusBar.ts` — status bar item with showIdle/showStep/showPaused/showComplete/showError
+- `src/ui/webviewHtml.ts` — shared HTML template with CSP nonce generation, webview URI resolution
+- `src/ui/webview/guide/index.tsx` — full React 18 Guide panel: step badge, mood-tinted speech bubble (neutral/warn/praise), Got it/Need a hint/Pause buttons, pause dropdown, progress bar, VSCode theme vars
+- `src/ui/webview/chat/index.tsx` — full React 18 Chat panel: collapsible plan overview, conversation history with auto-scroll, streaming with cursor indicator, plan suggestion mode (Suggest + Commit Plan), text input with Enter-to-send
+
+### Quality
+- @validator: 7/7 PASS — build clean, all files, CSP nonce, ViewColumn correct, React 18 createRoot, no external CSS
+- @tester: PASS — all 5 checks (guide layout, chat layout, message safety, theme vars, CSP security). Advisory: mode_change not handled in panels (non-blocking)
+
+## [0.0.1] — Sprint 3: Sensors
 
 ### Added — Phase 5: Monitoring
 - `src/monitoring/fileWatcher.ts` — subscribes to save/create/delete events, 1000ms debounce, 5s coalesce, ignore patterns (node_modules/.git/.next/dist/build/.turbo/logs/locks), content preview (100 lines/2000 chars)
@@ -15,7 +29,7 @@ All notable changes to TutorCode are documented here.
 - @validator: 6/6 PASS — build clean, all files present, ignore patterns complete, real checkpoint logic
 - @tester: 20/20 PASS — checkpointDetector, fileWatcher debounce/coalesce, terminalWatcher parsing, diagnosticsWatcher change tracking, orchestrator lifecycle
 
-## [1.0.0] — Sprint 2: Core Engine
+## [0.0.1] — Sprint 2: Core Engine
 
 ### Added — Phase 3: State
 - `src/state/types.ts` — all session/plan/index TypeScript interfaces (verbatim from TYPES_REFERENCE.md)
@@ -38,7 +52,7 @@ All notable changes to TutorCode are documented here.
 - @validator: all 6 checks PASS — build clean, 11 files, zero any, cache_control correct
 - @tester: all 5 checks PASS — types fidelity, sessionManager, promptCache, tierEvaluator routing, prompts completeness
 
-## [1.0.0] — Sprint 1: Foundation
+## [0.0.1] — Sprint 1: Foundation
 
 ### Added — Phase 1: Scaffold
 - `package.json` with 6 commands, keybinding (Ctrl+Shift+T), 4 configuration properties
