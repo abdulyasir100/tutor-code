@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:opencode.ai)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:deepwiki.com)",
+      "Bash(npm install *)",
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(npm run *)",
+      "Bash(npm cache *)",
+      "Bash(node esbuild.config.js)",
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(cp -r C:/Yasir/Repo/tutor-code/.claude/worktrees/agent-a92e7a07/src C:/Yasir/Repo/tutor-code/)",
+      "Bash([ -d \"$SRC/reports\" ])",
+      "Bash(cp -r C:/Yasir/Repo/tutor-code/.claude/worktrees/agent-a92e7a07/reports C:/Yasir/Repo/tutor-code/)",
+      "Bash(npx tsc *)",
+      "Bash([ -f \"$BASE/$f\" ])"
+    ]
+  }
+}
