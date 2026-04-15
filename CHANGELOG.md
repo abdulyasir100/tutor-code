@@ -2,6 +2,19 @@
 
 All notable changes to TutorCode are documented here.
 
+## [1.0.0] — Sprint 3: Sensors
+
+### Added — Phase 5: Monitoring
+- `src/monitoring/fileWatcher.ts` — subscribes to save/create/delete events, 1000ms debounce, 5s coalesce, ignore patterns (node_modules/.git/.next/dist/build/.turbo/logs/locks), content preview (100 lines/2000 chars)
+- `src/monitoring/terminalWatcher.ts` — shell integration marker parsing + heuristic fallback, 3s command completion timeout, VSCode 1.74+ version check
+- `src/monitoring/diagnosticsWatcher.ts` — error-only severity filter, per-URI count tracking, emit on change only
+- `src/monitoring/checkpointDetector.ts` — full Tier 1 rule engine: step completion (all expectedFiles exist + expectedCommands ran + zero errors), on-track (file matches step), drift (minor for off-plan files, major for deploy commands), drop signals for ignored paths, ambiguous fallthrough
+- `src/monitoring/orchestrator.ts` — coordinates all 3 watchers, fan-in to single event emitter, pause(minutes) with event queue (max 50)
+
+### Quality
+- @validator: 6/6 PASS — build clean, all files present, ignore patterns complete, real checkpoint logic
+- @tester: 20/20 PASS — checkpointDetector, fileWatcher debounce/coalesce, terminalWatcher parsing, diagnosticsWatcher change tracking, orchestrator lifecycle
+
 ## [1.0.0] — Sprint 2: Core Engine
 
 ### Added — Phase 3: State
