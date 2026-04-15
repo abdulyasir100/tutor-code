@@ -1,0 +1,15 @@
+.vscode/**
+src/**
+node_modules/**
+tsconfig*.json
+esbuild.config.js
+.eslintrc*
+*.md
+!README.md
+.gitignore
+tasks/**
+docs/**
+prompts/**
+.claude/**
+.git/**
+reports/**
