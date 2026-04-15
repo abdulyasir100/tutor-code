@@ -6,3 +6,4 @@ dist/
 *.log
 bash.exe.stackdump
 .claude/
+reports/
