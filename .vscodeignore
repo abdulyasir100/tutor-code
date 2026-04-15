@@ -1,0 +1,9 @@
+src/
+node_modules/
+.claude/
+.git/
+**/*.ts
+!**/*.js
+tsconfig*.json
+esbuild.config.js
+reports/
