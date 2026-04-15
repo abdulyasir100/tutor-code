@@ -2,6 +2,27 @@
 
 All notable changes to TutorCode are documented here.
 
+## [0.0.1] — Sprint 5: Integration + Polish
+
+### Added — Phase 7: Integration
+- `src/extension.ts` — full rewrite (~1290 lines): state machine (IDLE→AUTH→GOAL→SCAN→PLANNING→GUIDANCE↔CHAT), cooldown system (15s/30s/60s per level), event routing (monitoring→tierEvaluator→UI), session resume on activate, all 6 commands fully wired
+- Step advancement: step_complete confirm → advance → guidance generation → milestone check → adaptive level suggestion
+- Plan suggestion loop: AI generates plan → user suggests changes → AI revises → user commits
+- Inactivity nudge system (5min/10min/never per level)
+
+### Added — Phase 8: Polish
+- `src/errorHandler.ts` — centralized error classification (auth/rate-limit/network/parse/validation/corruption) with recovery actions
+- `src/debugLogger.ts` — timestamped event logging to .vscode/tutorcode-debug.log when debugMode enabled
+- `README.md` — full documentation: features, installation, auth setup, session walkthrough, settings reference
+- `VSIX_BUILD.sh` — build + package script (npm ci → build → vsce package)
+- `.vscodeignore` — tuned to ship only dist/, package.json, README.md
+- `package.json` — added tutorcode.debugMode setting
+- Fallback rule-based guidance when AI unavailable
+
+### Quality
+- @validator: 8/8 PASS — build clean, full integration, cooldown, resume, error handling, README, VSIX
+- @tester: 6/6 PASS — state machine flow, cooldown gate, guide wiring, chat wiring, error resilience, session resume
+
 ## [0.0.1] — Sprint 4: Interface
 
 ### Added — Phase 6: UI

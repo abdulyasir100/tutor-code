@@ -47,6 +47,11 @@
           "type": "number",
           "default": 30,
           "description": "Minimum seconds between unprompted guidance messages"
+        },
+        "tutorcode.debugMode": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable debug logging to .vscode/tutorcode-debug.log"
         }
       }
     }
